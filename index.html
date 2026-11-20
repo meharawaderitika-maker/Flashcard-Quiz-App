@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Flashcard Quiz App</h1>
+
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="flashcard">
+
+        <h2>Welcome to Flashcard Quiz!</h2>
+
+        <p>Test your programming knowledge and improve your skills.</p>
+
+        <div class="category-section">
+            <h3>Choose Your Category</h3>
+
+            <select id="category" onchange="changeCategory()">
+                <option value="all">All Questions</option>
+                <option value="java">Java</option>
+                <option value="web">HTML & CSS</option>
+                <option value="python">Python</option>
+                <option value="ai">AI & ML</option>
+            </select>
+            <h3>Select Difficulty</h3>
+
+<select id="difficulty">
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+</select>
+        </div>
+
+        <br>
+
+        <button onclick="startQuiz()">Start Quiz 🚀</button>
+
+    </div>
+
+    <!-- Quiz Screen -->
+    <div class="flashcard" id="quizContainer" style="display: none;">
+
+        <h2 id="questionNumber">Question 1</h2>
+
+        <h3 id="timer">Time: 60 seconds</h3>
+
+        <div class="progress-container">
+            <progress id="progressBar" value="0" max="10"></progress>
+            <p id="progressText">0 / 10 Questions Completed</p>
+        </div>
+
+        <p id="question">What is Java?</p>
+
+        <p id="answer" style="display: none;">
+            Java is a programming language.
+        </p>
+
+        <button onclick="showAnswer()">Show Answer</button>
+        <button onclick="nextQuestion()">Next Question</button>
+        <button onclick="previousQuestion()">Previous Question</button>
+
+        <hr>
+
+        <h3>Check Your Answer</h3>
+
+        <button onclick="markCorrect()">Correct</button>
+        <button onclick="markWrong()">Wrong</button>
+
+        <h3 id="score">Score: 0</h3>
+
+        <h3 id="bestScore">Best Score: 0</h3>
+
+        <button onclick="resetQuiz()">Reset Quiz</button>
+        <button onclick="shuffleQuiz()">Shuffle Questions 🔀</button>
+        <button onclick="finishQuiz()">Finish Quiz</button>
+
+        <!-- Result Section -->
+        <div id="resultSection" style="display: none;">
+
+            <hr>
+
+            <h2>Quiz Results</h2>
+
+            <p id="totalAttempted"></p>
+            <p id="correctAnswers"></p>
+            <p id="wrongAnswers"></p>
+            <p id="percentage"></p>
+
+            <h3 id="resultMessage"></h3>
+
+            <button onclick="resetQuiz()">Restart Quiz</button>
+
+            <button onclick="goHome()">Home</button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
